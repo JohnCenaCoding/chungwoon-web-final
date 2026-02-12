@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +9,109 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
   <style>
-    * { font-family: 'Noto Sans KR', sans-serif; }
-    .gradient-bg { background: linear-gradient(135deg, #4c51bf 0%, #553c9a 100%); }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-    .section-divider { height: 4px; background: linear-gradient(90deg, #667eea, #764ba2, #f093fb); border-radius: 2px; }
-    .quote-box { border-left: 4px solid #667eea; background: linear-gradient(90deg, rgba(102,126,234,0.1), transparent); }
-    .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
-    .fade-in { animation: fadeIn 0.5s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .hero-text { text-shadow: 1px 1px 2px rgba(0,0,0,0.5), 2px 2px 8px rgba(0,0,0,0.4); }
-    .hero-text-light { text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
-    .white-badge { background: rgba(255,255,255,0.35); backdrop-filter: blur(4px); text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
-    .scroll-smooth { scroll-behavior: smooth; }
-    .detail-hero { background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 100%); }
+    * {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #4c51bf 0%, #553c9a 100%);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-divider {
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+      border-radius: 2px;
+    }
+
+    .quote-box {
+      border-left: 4px solid #667eea;
+      background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), transparent);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-text {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-text-light {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .white-badge {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+
+    .detail-hero {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 100%);
+    }
+
     .download-button {
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
       color: #6b46c1;
-      border: 2px solid rgba(255,255,255,0.9);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 0 1px rgba(107,70,193,0.1);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(107, 70, 193, 0.1);
     }
+
     .download-button:hover {
       background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(107,70,193,0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(107, 70, 193, 0.2);
       transform: translateY(-2px);
     }
+
     .scrollbar-hide::-webkit-scrollbar {
       display: none;
     }
   </style>
 </head>
+
 <body class="bg-gray-50 scroll-smooth">
   <div id="root"></div>
-  
+
   <script type="text/babel">
     const { useState, useEffect } = React;
 
@@ -407,7 +475,7 @@
             <div className="max-w-7xl mx-auto px-4 py-3">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                 <h2 className="text-base md:text-lg font-bold text-gray-800 text-center md:text-left">홍성군 마을축제</h2>
-                <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+                <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                   {locations.map((loc) => (
                     <button
                       key={loc.filter}
@@ -415,11 +483,10 @@
                         setSelectedLocation(loc.filter);
                         scrollToFestivals();
                       }}
-                      className={`px-3 py-1.5 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-colors ${
-                        selectedLocation === loc.filter
+                      className={`px-3 py-1.5 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-colors ${selectedLocation === loc.filter
                           ? 'bg-purple-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
+                        }`}
                     >
                       {loc.name}
                     </button>
@@ -433,11 +500,11 @@
           <header className="gradient-bg hero-pattern text-white py-20 px-4">
             <div className="max-w-6xl mx-auto text-center">
               <div className="text-6xl mb-6">🏘️</div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 hero-text">홍성군 마을축제 아카이빙</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 hero-text break-keep">홍성군 마을축제 아카이빙</h1>
               <p className="text-xl md:text-2xl font-medium mb-2 hero-text">"함께 만드는 마을 축제, 공동체의 삶을 담다"</p>
               <p className="text-lg mt-6 max-w-3xl mx-auto leading-relaxed hero-text-light">
-                홍성군 14개 마을의 이야기를 기록합니다.<br/>
-                주민들의 땀과 웃음, 전통과 혁신이 만나는 축제의 현장을<br/>
+                홍성군 14개 마을의 이야기를 기록합니다.<br />
+                주민들의 땀과 웃음, 전통과 혁신이 만나는 축제의 현장을<br />
                 2026년에도 함께 만들어가기 위한 첫걸음입니다.
               </p>
               <div className="mt-10 flex justify-center">
@@ -459,13 +526,13 @@
               <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">📖 이 아카이빙에 대하여</h2>
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl">
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  홍성군에는 오랜 역사와 생활문화에 기반한 다양한 마을축제가 주민 주도로 운영되고 있습니다. 
+                  홍성군에는 오랜 역사와 생활문화에 기반한 다양한 마을축제가 주민 주도로 운영되고 있습니다.
                   조롱박 터널 아래를 거닐고, 들돌을 들어 어른이 되고, 용궁으로 통하는 우물에서 소원을 빌고...
                   이 모든 이야기가 바로 홍성의 마을에서 일어나고 있습니다.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  하지만 운영 주체의 고령화, 기획 인력 부족, 축제 운영 경험의 기록 부재로 인해 
-                  많은 마을축제가 지속성의 어려움을 겪고 있습니다. 
+                  하지만 운영 주체의 고령화, 기획 인력 부족, 축제 운영 경험의 기록 부재로 인해
+                  많은 마을축제가 지속성의 어려움을 겪고 있습니다.
                   이 아카이빙은 그 소중한 경험과 이야기를 기록하고, 다음 세대로 이어가기 위한 첫걸음입니다.
                 </p>
                 <p className="text-purple-700 font-medium">
@@ -478,7 +545,7 @@
           {/* 축제 목록 섹션 */}
           <section id="festivals-section" className="py-16 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">🎪 2025년 마을축제 둘러보기</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center break-keep">🎪 2025년 마을축제 둘러보기</h2>
               <p className="text-gray-600 text-center mb-4">각 마을을 클릭하면 상세한 이야기를 만날 수 있어요</p>
 
               {/* 지역 필터 버튼 (모바일/데스크탑 공통) */}
@@ -487,11 +554,10 @@
                   <button
                     key={loc.filter}
                     onClick={() => setSelectedLocation(loc.filter)}
-                    className={`px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium transition-colors ${
-                      selectedLocation === loc.filter
+                    className={`px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium transition-colors ${selectedLocation === loc.filter
                         ? 'bg-purple-600 text-white shadow-md'
                         : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
-                    }`}
+                      }`}
                   >
                     {loc.name}
                   </button>
@@ -533,7 +599,7 @@
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl">
                   <h3 className="font-bold text-green-700 mb-3">🎯 목적</h3>
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    농촌지역의 마을단위에서 주민이 주체가 되어 주민의 화합, 마을 홍보 및 마을 소득 창출 등을 도모하고 
+                    농촌지역의 마을단위에서 주민이 주체가 되어 주민의 화합, 마을 홍보 및 마을 소득 창출 등을 도모하고
                     군민과 함께하는 문화형성
                   </p>
                 </div>
@@ -646,9 +712,9 @@
           <footer className="bg-gray-800 text-white py-12 px-4">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-2xl mb-4">🏘️</p>
-              <h3 className="text-xl font-bold mb-2">홍성군 마을축제 아카이빙</h3>
+              <h3 className="text-xl font-bold mb-2 break-keep">홍성군 마을축제 아카이빙</h3>
               <p className="text-gray-400 text-sm mb-6">
-                「홍성군 마을축제 운영현황 및 본교와의 협력 방안 연구」 기반<br/>
+                「홍성군 마을축제 운영현황 및 본교와의 협력 방안 연구」 기반<br />
                 2025년 12월 제작
               </p>
               <div className="border-t border-gray-700 pt-6">
@@ -669,7 +735,7 @@
           {/* 상단 네비게이션 */}
           <div className="bg-white shadow-sm sticky top-0 z-50">
             <div className="max-w-5xl mx-auto px-4 py-4 flex items-center">
-              <button 
+              <button
                 onClick={onBackClick}
                 className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
               >
@@ -770,7 +836,7 @@
                 <span>💬</span> 라운드테이블 결과
               </h2>
               <div className="section-divider mb-6"></div>
-              
+
               {/* 기획자 인터뷰 */}
               <div className="bg-white rounded-2xl p-6 shadow-sm mb-6">
                 <h3 className="font-bold text-purple-700 mb-4 flex items-center gap-2">
@@ -819,7 +885,7 @@
               <div className="bg-gradient-to-r from-purple-700 to-indigo-700 rounded-2xl p-8 text-white text-center">
                 <h2 className="text-2xl font-bold mb-4 hero-text">🌟 2026년, 더 풍성한 {festival.name}을 기대합니다!</h2>
                 <p className="max-w-2xl mx-auto hero-text-light">
-                  올해의 경험이 내년의 밑거름이 됩니다. {festival.name}의 따뜻한 이야기가 
+                  올해의 경험이 내년의 밑거름이 됩니다. {festival.name}의 따뜻한 이야기가
                   더 많은 분들에게 전해지길 바랍니다. 2026년에 다시 만나요!
                 </p>
               </div>
@@ -827,7 +893,7 @@
 
             {/* 하단 네비게이션 */}
             <div className="text-center">
-              <button 
+              <button
                 onClick={onBackClick}
                 className="bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors"
               >
@@ -852,4 +918,5 @@
     ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
+
 </html>
